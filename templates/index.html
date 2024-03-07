@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Diabetes</title>
+</head>
+<body>
+    <h1>Predicción de Diabetes</h1>
+    <h1> Hecho por Mariana Alejandra Peralta Garcia y Jairo Alan Castelan Fernandez</h1>
+    <p>Por favor, ingrese los siguientes datos para predecir si tiene diabetes o no:</p>
+    <form action="/predict" method="post">
+        <label for="glucose">Nivel de Glucosa en Sangre (mg/dL):</label><br>
+        <input type="text" id="glucose" name="glucose"><br><br>
+        
+        <label for="bmi">Índice de Masa Corporal (BMI):</label><br>
+        <input type="text" id="bmi" name="bmi"><br><br>
+        
+        <label for="age">Edad:</label><br>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <input type="submit" value="Predecir">
+    </form>
+    
+    {% if logistic_result or random_forest_result %}
+        <h2>Resultados:</h2>
+        <p>Resultado de Regresión Logística: {{ logistic_result }}</p>
+    {% endif %}
+</body>
+</html>
