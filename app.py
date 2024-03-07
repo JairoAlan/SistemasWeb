@@ -2,9 +2,9 @@ from flask import Flask, render_template, request
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
+#from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
-import joblib
+#import joblib
 
 # Cargamos los datos
 data = pd.read_csv('diabetes.csv')
@@ -50,4 +50,5 @@ def predict():
     return render_template("index.html", logistic_result=logistic_result)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0')
